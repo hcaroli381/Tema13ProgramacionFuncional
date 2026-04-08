@@ -20,15 +20,12 @@ public class Curso {
 	}
 
 	Optional<Alumno> findRepeaterStudent(String nombre) {
-		Optional<Alumno> option = java.util.Optional.empty();
 		for (Alumno alumno : listaAlumnos) {
 			if (alumno.getNombre().equalsIgnoreCase(nombre) && alumno.isRepetidor()) {
-				option = Optional.of(alumno);
-			} else {
-				option = Optional.empty();
+				return Optional.of(alumno);
 			}
 		}
-		return option;
+		return Optional.empty();
 	}
 
 }
